@@ -1,13 +1,14 @@
 var webpack = require('webpack')
+var path = require('path')
 
 module.exports = {
   sourceMap: 'eval',
 
-  entry: './index.js',
+  entry: './app/client/client.js',
 
   output: {
-    path: './',
-    filename: 'index.min.js'
+    path: path.join(__dirname, './public'),
+    filename: 'client.min.js'
   },
 
   resolve: {
@@ -16,7 +17,11 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel' }
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel'
+      }
     ]
   },
 };
