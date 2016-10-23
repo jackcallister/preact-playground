@@ -1,10 +1,15 @@
 import { h, Component } from 'preact'
+import { Provider } from 'mobx-preact'
+import Counter from './Counter'
+import store from './store'
 
 class App extends Component {
 
   render() {
     return (
-      <h1>Sup dawg</h1>
+      <Provider store={store}>
+        <Counter />
+      </Provider>
     )
   }
 }
