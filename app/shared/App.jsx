@@ -1,6 +1,7 @@
 import { h, Component } from 'preact'
+import Router from 'preact-router'
 import { Provider } from 'mobx-preact'
-import Counter from './Counter'
+import Home from './Home'
 import store from './store'
 
 class App extends Component {
@@ -8,7 +9,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Counter />
+        <Router>
+          <Home path="/" />
+        </Router>
       </Provider>
     )
   }
